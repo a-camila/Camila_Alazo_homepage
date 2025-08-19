@@ -1,0 +1,51 @@
+@use '../utils/variables' as *;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: $bg-header;
+    backdrop-filter: blur(10px);
+    transition: height $transition-speed-fast ease-in-out;
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $bg-secondary;
+        padding: 0 20px;
+        height: 80px;
+
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+    }
+
+    &__links {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+
+        @media (max-width: 768px) {
+            gap: 5px;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $accent;
+        padding: 10px;
+        font-size: 1.4rem;
+
+        &:hover {
+            background-color: $bg-hover;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            padding: 8px;
+        }
+    }
+}
